@@ -1,0 +1,16 @@
+/* line 3, ../../sass/components/chat-bottom-bar.scss */
+.chat-bottom-bar {
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  height: 70px;
+  max-height: 70px;
+}
+/* line 10, ../../sass/components/chat-bottom-bar.scss */
+.chat-bottom-bar .icon-minim {
+  padding: 2px 10px;
+}
+/* line 14, ../../sass/components/chat-bottom-bar.scss */
+.chat-bottom-bar input {
+  height: calc(70px - 30px);
+}

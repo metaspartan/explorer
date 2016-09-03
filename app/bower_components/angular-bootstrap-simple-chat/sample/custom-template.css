@@ -1,0 +1,30 @@
+.chat-window {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    max-height: 600px;
+    height: auto;
+    width: 320px;
+}
+
+
+.chat-window.minimized {
+    height: 40px;
+}
+
+.chat-top-bar {
+    height: 40px;
+}
+
+.chat-bottom-bar {
+    height: 60px;
+}
+
+.msg-container-base {
+    height: auto;
+    max-height: 500px;
+}
+
+.panel-body {
+    padding: 0;
+}

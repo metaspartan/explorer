@@ -1,0 +1,17 @@
+@import '../config';
+// Chat Top Bar Class
+.chat-bottom-bar {
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  height: $bottom-bar-height;
+  max-height: $bottom-bar-height;
+
+  .icon-minim {
+    padding: 2px 10px;
+  }
+
+  input {
+    height: calc(#{$bottom-bar-height} - 30px);
+  }
+}

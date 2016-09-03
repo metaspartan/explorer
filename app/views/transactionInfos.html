@@ -1,0 +1,89 @@
+<div class="container" style="padding-top:5px;">
+
+    <h1><i class="fa fa-exchange"></i> Transaction
+        <small>View information about an Ethereum transaction</small>
+    </h1>
+
+    <div id="tx-97785883" class="txdiv">
+      <div class="table-responsive">
+        <table class="table table-striped" cellpadding="0" cellspacing="0" style="padding:0px;float:left;margin:0px;width:100%">
+            <tbody>
+            <tr>
+                <th colspan="3" align="left"><a class="hash-link" href="./#/tx/{{txId}}">{{txId}}</a> <span class="pull-right"></span></th>
+            </tr>
+            <tr>
+                <td style="text-align:center;vertical-align:middle;">
+                    <a href="./#/address/{{from}}">{{from}}</a>
+                    <br>
+                </td>
+                <td width="48px" class="" style="text-align:center;vertical-align:middle;">
+                    <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                </td>
+                <td style="text-align:center;vertical-align:middle;">
+                    <a href="./#/address/{{to}}">{{to}}</a>
+                    <span class="pull-right">
+                        <span>{{ethValue}} ETH</span>
+                    </span>
+                    <br>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+        <div style="padding-bottom:30px;width:100%;text-align:right;clear:both">   <!--TODO no style tags...-->
+            <button class="btn btn-primary">{{conf}} Confirmations</button>
+            <button class="btn btn-success cb"><span>{{ethValue}} ETH</span></button>
+        </div>
+        <div class="table-responsive">
+        <table class="table table-striped">
+            <tbody><tr>
+                <th colspan="2" style="text-align:left">Summary</th>
+            </tr>
+            <tr>
+                <td>Block Hash</td>
+                <td><a href="./#/block/{{blockHash}}">{{blockHash}}</a></td>
+            </tr>
+            <tr>
+                <td>Received Time</td>
+                <td>
+                    {{time * 1000 | date:'medium'}}
+                </td>
+            </tr>
+            <tr>
+                <td>Included In Block</td>
+                <td>
+                    <a href="./#/block/{{blockNumber}}"><button class="btn btn-sm btn-primary">{{blockNumber}}</button></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gas Used</td>
+                <td>{{gas | gasFormat}}</td>
+            </tr>
+            <tr>
+                <td>Gas Price</td>
+                <td>{{gasPrice}}</td>
+            </tr>
+            <tr>
+                <td>Transaction Confirmations</td>
+                <td><span style="color: #08d410; font-weight: bold;">{{conf}}</span></td>
+            </tr>
+            <tr>
+                <td>Number of transactions made by the sender prior to this one</td>
+                <td>{{nonce}}</td>
+            </tr>
+            <tr>
+                <td>Transaction price</td>
+                <td>{{txprice}}</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td><textarea style="min-width: 100%; background-color: #222; color: #08d410;">{{input}}</textarea></td>
+            </tr>
+
+
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+</div>

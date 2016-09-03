@@ -1,0 +1,40 @@
+/* line 2, ../../sass/components/chat-msg.scss */
+.chat-msg {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  padding: 10px;
+}
+/* line 9, ../../sass/components/chat-msg.scss */
+.chat-msg p {
+  font-size: 13px;
+  margin: 0 0 .2rem;
+}
+/* line 14, ../../sass/components/chat-msg.scss */
+.chat-msg time {
+  color: #ccc;
+  font-size: 11px;
+}
+/* line 19, ../../sass/components/chat-msg.scss */
+.chat-msg .chat-msg-author {
+  display: block;
+}
+/* line 23, ../../sass/components/chat-msg.scss */
+.chat-msg.chat-msg-receive {
+  margin-right: 0;
+  padding-bottom: 20px;
+}
+/* line 28, ../../sass/components/chat-msg.scss */
+.chat-msg.chat-msg-sent {
+  margin-right: 0;
+  padding-bottom: 20px;
+}
+/* line 32, ../../sass/components/chat-msg.scss */
+.chat-msg.chat-msg-sent .chat-msg-author {
+  text-align: right;
+}
+/* line 36, ../../sass/components/chat-msg.scss */
+.chat-msg.chat-msg-sent time {
+  float: right;
+}

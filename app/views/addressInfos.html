@@ -1,0 +1,29 @@
+<div class="container" style="padding-top: 10px;">
+
+    <h1><i class="fa fa-code"></i> Ethereum Address
+        <small>View information about an Ethereum Address</small>
+    </h1>
+<hr>
+    <div id="address" class="blockdiv">
+      <div style="font-size: 32px; font-weight: lighter; margin-bottom: 15px; display: inline-block;" align="center"><a onclick="shapeshift_click(this, event);" href="https://shapeshift.io/shifty.html?destination={{addressId}}&amp;output=ETH&amp;apiKey=d2d09a697e768702869520bc27d3f166752bc0b2f8faf0824a834bdfd6f1aa75eab40a93cb8574e6647f42722d8f8cc9319e9d745a08186ec48ef5a4b8a56a3d"><img src="https://shapeshift.io/images/shifty/xs_dark_ss.png" class="ss-button"></a> {{ addressId }}</div><br /><br />
+        <table class="table table-striped">
+            <tbody><tr>
+                <th colspan="2" style="text-align:left">Summary</th>
+            </tr>
+            <tr>
+                <td>Current Balance</td>
+                <td><span style="font-size: 24px; font-weight: lighter;">{{ balance }} ETH</span><br />(Value in USD: {{ balanceusd || "Calculating.." }})</td>
+            </tr>
+            <tr>
+                <td>Transaction Count <em>(# of outgoing TXs)</em></td>
+                <td>{{ txCount }}</td>
+            </tr>
+            <tr>
+                <td>Code</td>
+                <td><textarea style="min-width: 100%; background-color: #222; color: #08d410;">{{ code }}</textarea></td>
+            </tr>
+          </tbody>
+      </table>
+      <hr>
+      Transaction History Coming Soon
+</div></div>

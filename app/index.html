@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="ethExplorer" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="ethExplorer" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="ethExplorer" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="ethExplorer" class="no-js"> <!--<![endif]-->
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ethereum Block Explorer</title>
+  <meta name="description" content="An Ethereum (ETH) Block Explorer">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+  <script src="https://use.fontawesome.com/9376283190.js"></script>
+  <script src="bower_components/web3/dist/web3.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="./#/">ETHER EXPLORER</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="./#/">Home</a></li>
+            <li><a href="./#/chain">Blockchain Info</a></li>
+        </ul>
+        <div class="col-sm-3 col-md-3 pull-right">
+            <form class="navbar-form"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
+                <div class="input-group">
+                    <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required  ng-model="ethRequest"  class="form-control searchi">
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary btn-blue" type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</nav>
+
+
+  <div ng-view></div>
+
+<!--Libs-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--Core-->
+  <script src="app.js"></script>
+
+<!--Controllers-->
+  <script src="scripts/controllers/mainController.js"></script>
+  <script src="scripts/controllers/addressInfosController.js"></script>
+  <script src="scripts/controllers/chainInfosController.js"></script>
+  <script src="scripts/controllers/blockInfosController.js"></script>
+  <script src="scripts/controllers/transactionInfosController.js"></script>
+<!--jQuery-->
+<script>
+function shapeshift_click(a,e) {
+  e.preventDefault();
+  var link=a.href;
+  window.open(link,'1418115287605','width=700,height=500,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=0,left=0,top=0');
+  return false;
+}
+</script>
+
+  <!--Services-->
+    <div id="connectwarning" class="modal fade" role="dialog">
+
+    	<!-- begin AltSheets -->
+        <div id="connectwarning-dialog" class="modal-dialog">
+        <!-- end AltSheets -->
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <center><div class="modal-header">
+                    <h4 class="modal-title">Allow Access to Geth and Refresh the Page</h4>
+                </div>
+                <div class="modal-body">
+                    <code><p id="modaltext"></p></code>
+                </div></center>
+            </div>
+        </div>
+    </div>
+
+
+<div class="footer styledfoot">
+    <footer><br />
+            © ETHER EXPLORER 2016 | <a href="http://github.com/etherparty/explorer">Fork me on GitHub</a><br />
+            Helpful Links: ethereum.org | gdax.com | coinbase.com
+            <br />
+    </footer>
+</div>
+<script>
+//begin AltSheets
+$("#modaltext").text( geth_command );
+// end AltSheets
+</script>
+</body>
+</html>

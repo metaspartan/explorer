@@ -1,0 +1,40 @@
+$themes:
+  'irontec'  #c33 #fff,
+  'material' #009688 #fff;
+
+@each $theme in $themes {
+  $name: nth($theme, 1);
+  $color: nth($theme, 2);
+  $forecolor: nth($theme, 3);
+
+  .chat-th-#{$name} {
+    .chat-top-bar {
+      background: $color;
+      color: $forecolor;
+    }
+
+    .chat-msg-receive {
+      .chat-msg-author {
+        color: $color;
+      }
+    }
+
+    .chat-input {
+      &:focus {
+        border-color: $color;
+        box-shadow: 0 1px 1px $forecolor inset, 0 0 8px $color;
+        outline: 0 none;
+      }
+    }
+
+    .chat-submit-button {
+      background: $color;
+      color: $forecolor;
+
+      &:focus {
+        border-color: $color;
+        outline: 0 none;
+      }
+    }
+  }
+}

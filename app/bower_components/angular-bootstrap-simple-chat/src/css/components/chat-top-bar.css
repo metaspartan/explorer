@@ -1,0 +1,15 @@
+/* line 3, ../../sass/components/chat-top-bar.scss */
+.chat-top-bar {
+  background: #666;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  height: 70px;
+  max-height: 70px;
+  border-radius: 0;
+}
+/* line 13, ../../sass/components/chat-top-bar.scss */
+.chat-top-bar .icon-minim {
+  padding: 2px 10px;
+}

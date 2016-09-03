@@ -1,0 +1,147 @@
+/* app css stylesheet */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto';
+
+body {
+  font-family: 'Open Sans', sans-serif !important;
+}
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.navbar-dark {
+  background-color: #293640;
+  color: #FFF;
+}
+.navbar a {
+  color: #FFF;
+}
+.navbar a:hover {
+  color: #FFF;
+}
+
+.navbar a:visited {
+  color: #FFF;
+}
+
+.title {
+  color: #FFF;
+  font-weight: bold;
+}
+
+input.searchi {
+  background-color: #293640 !important;
+  border: 2px solid #384a58;
+  color: #fff;
+  width: 100% !important;
+}
+
+input.searchimain {
+  height: 50px;
+  background-color: #293640 !important;
+  border: 2px solid #384a58;
+  color: #fff;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+    .searchimain {
+        width: 800px !important;
+    }
+}
+
+.boxi {
+  background-color: #104050;
+  color: #FFF;
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.thead-inverse {
+  background-color: #293640;
+  color: #FFF;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #30404c !important;
+}
+
+.btn-blue {
+  background-color: #293640 !important;
+  border-color: #384a58 !important;
+  color: #FFF !important;
+}
+
+.btn-blue.focus,.btn-blue:focus {
+  background-color: #293640;
+  border-color: #384a58;
+  color: #FFF;
+}
+
+.btn-blue:hover {
+  background-color: #293640;
+  border-color: #384a58;
+  color: #FFF;
+}
+
+.btn-bluem {
+  background-color: #293640 !important;
+  border-color: #384a58 !important;
+  color: #FFF !important;
+  height: 50px !important;
+}
+
+.btn-bluem.focus,.btn-bluem:focus {
+  background-color: #293640;
+  border-color: #384a58;
+  color: #FFF;
+}
+
+.btn-bluem:hover {
+  background-color: #293640;
+  border-color: #384a58;
+  color: #FFF;
+}
+
+.styledfoot {
+  margin-top: 45px;
+  bottom: 0px;
+  padding-bottom: 25px;
+  text-align: center;
+  color: #FFF;
+  background-color: #293640;
+  width:100%;
+}
+
+// make the rpc command dialogue wider
+#connectwarning {width:900px;}
+#connectwarning-dialog   {width:900px;}

@@ -1,0 +1,110 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" align="center">
+    <form class="navbar-form"  ng-controller="mainCtrl" ng-submit="processRequest()" name="search_form" role="search">
+        <div class="input-group">
+            <input type="text" placeholder="Tx Hash, Address, or Block #" name="requestType" required ng-model="ethRequest"  class="form-control searchimain">
+            <div class="input-group-btn">
+                <button class="btn btn-primary btn-bluem" type="submit"><i class="fa fa-search"></i> Search</button>
+            </div>
+        </div>
+    </form></div></div>
+</div>
+<div class="container" style="padding-top: 20px;">
+  <div class="row">
+    <div class="col-md-2" align="center"><div class="boxi">Current Block:<br />{{ blockNumber }}</div></div>
+    <div class="col-md-2" align="center"><div class="boxi">ETH/USD Price:<br />{{ ethprice || "Loading" }}</div></div>
+    <div class="col-md-2" align="center"><div class="boxi">Gas Limit:<br />{{ gasLimit }}</div></div>
+    <div class="col-md-2" align="center"><div class="boxi">Block Time:<br />{{ blocktime }} second(s)</div></div>
+    <div class="col-md-2" align="center"><div class="boxi">Current Diff:<br />{{ difficulty | diffFormat }}</div></div>
+    <div class="col-md-2" align="center"><div class="boxi">Hashrate:<br />{{ hashrate || "Loading" | hashFormat }}</div></div>
+  </div>
+  <h1><i class="fa fa-cubes"></i> Recent Blocks <small>Most Recent Blocks in the Ethereum Network</small></h1><br />
+  <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="thead-inverse">
+            <td>
+                <strong>Block #</strong>
+            </td>
+            <td>Block Hash</td>
+            <td>Difficulty</td>
+            <td>Miner</td>
+            <td>
+                Size
+            </td>
+            <td>
+                Date
+            </td>
+            <td>
+                # of TXs
+            </td>
+            <td>
+                Gas used
+            </td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="block in blocks" class="animated fadeIn">
+                <td>
+                    <a href="/#/block/{{ block.number }}">
+                        <span class="btn btn-sm btn-primary"><i class="fa fa-cube"></i> {{ block.number }}</span>
+                    </a>
+                </td>
+                <td><a href="/#/block/{{ block.hash }}"><span class="btn btn-sm btn-success">{{ block.hash | truncate : 12 }}</span></a></td>
+                <td style="vertical-align:middle;">{{ block.difficulty | diffFormat }}</td>
+                <td style="vertical-align:middle;"><a href="/#/address/{{ block.miner }}">{{ block.miner }}</a></td>
+                <td style="vertical-align:middle;">
+                    {{ block.size | sizeFormat }}
+                </td>
+                <td style="vertical-align:middle;">
+                    {{ block.timestamp * 1000 | date:'medium' }}
+                </td>
+                <td style="vertical-align:middle;">
+                    {{ block.transactions.length }}
+                </td>
+                <td style="vertical-align:middle;">
+                    {{ block.gasUsed | gasFormat }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+    <h1><i class="fa fa-exchange"></i> Recent Transactions <small>Transactions in the Ethereum Network</small></h1><br />
+    <div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered">
+        <thead class="thead-inverse">
+            <td>
+                <strong>TX Hash</strong>
+            </td>
+            <td>Block #</td>
+            <td>From</td>
+            <td>To
+            </td>
+            <td>
+                Gas Used
+            </td>
+            <td>
+                Value
+            </td>
+        </thead>
+        <tbody>
+            <tr ng-repeat="tx in recenttransactions track by $index-async" class="animated fadeIn">
+
+              <td style="vertical-align:middle;"><a href="/#/tx/{{ tx.hash }}">{{ tx.hash || "" | truncate : 45 }}</a></td>
+                <td style="vertical-align:middle;">
+                    <a href="/#/block/{{ tx.blockNumber }}">
+                        {{ tx.blockNumber || "" }}
+                    </a>
+                </td>
+                <td style="vertical-align:middle;"><a href="/#/address/{{ tx.from }}">{{ tx.from || "" | truncate : 20 }}</a></td>
+                <td style="vertical-align:middle;"><a href="/#/address/{{ tx.to }}">{{ tx.to || "" | truncate : 20 }}</a></td>
+                <td style="vertical-align:middle;">
+                    {{ tx.gas | gasFormat }}
+                </td>
+                <td style="vertical-align:middle;">
+                    {{ tx.value | BigNum }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

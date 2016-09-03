@@ -1,0 +1,63 @@
+<div class="container" style="padding-top: 10px;">
+
+    <h1><i class="fa fa-server"></i> Ethereum Information
+        <small>View information about the Ethereum Blockchain</small>
+    </h1>
+    <div id="chain" class="blockdiv">
+        <table class="table table-striped">
+            <tbody><tr>
+                <th colspan="2" style="text-align:left">Summary</th>
+            </tr>
+            <tr>
+                <td>Current Block</td>
+                <td><a href="./#/block/{{ blockNum }}">{{ blockNum }}</a></td>
+            </tr>
+            <tr>
+                <td>Block Time</td>
+                <td>
+                    {{ blocktime }} seconds since block <a href="./#/block/{{ blockNum - 1 }}">{{ blockNum - 1 }}</a><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Block Time Averages</td>
+                <td><table style="width:100%"><tbody><tr><td>
+                    {{ blocktimeAverage1 }} seconds for the past 100 blocks<br>
+                    {{ blocktimeAverage2 }} seconds for the past 1,000 blocks
+                    </td><td>
+                    {{ blocktimeAverage3 }} seconds for the past 10,000 blocks<br>
+                    {{ blocktimeAverage4 }} seconds for the past 100,000 blocks
+                    </td></tr><tr><td>
+                    {{ blocktimeAverageAll }} seconds for all {{blockNum}} blocks
+                    </td></tr></tbody></table>
+                </td>
+            </tr>
+            <tr>
+                <td>Current Difficulty</td>
+                <td>{{ difficulty_formatted }}</td>
+            </tr>
+            <tr>
+                <td>Total Difficulty</td>
+                <td>{{ totalDifficulty_formatted }}</td>
+            </tr>
+            <tr>
+                <td>Gas Limit</td>
+                <td>{{ gasLimit }}</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>{{ time }}</td>
+            </tr>
+            <tr>
+                <td>Connected to ETH Network</td>
+                <td>{{ isConnected }}</td>
+            </tr>
+            <tr>
+                <td>API/Client Version</td>
+                <td>{{ versionApi }} - {{ versionClient }}</td>
+            </tr>
+          </tbody>
+      </table>
+      <hr>
+    </div>
+
+</div>

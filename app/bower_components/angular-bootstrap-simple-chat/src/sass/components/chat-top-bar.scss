@@ -1,0 +1,16 @@
+@import '../config';
+// Chat Top Bar Class
+.chat-top-bar {
+  background: #666;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  height: $top-bar-height;
+  max-height: $top-bar-height;
+  border-radius: 0;
+
+  .icon-minim {
+    padding: 2px 10px;
+  }
+}
