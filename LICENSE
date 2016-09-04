@@ -1,46 +1,6 @@
-Etherparty Explorer License TL;DR
+ETHExplorer V2 License
 
-* This TL;DR is not a license and holds no legal weight
-* This TL;DR is only to give you an idea of how the software is licensed
-* The actual license begins after "----", anything prior holds no weight
-
-TL;DR:
-
-* Code that is either in the MIT branch and/or from before the commit
-7e79bc3965f05536acd933b6e984f691b1295469 is licensed under MIT
-* Under MIT, you cannot hold the author liable, and you must retain
-the license and copyright in all copies and derivatives of the work
-* Any code that is not in the MIT branch and is created after commit
-hash 7e79bc3965f05536acd933b6e984f691b1295469 is licensed under GPLv3
-* Under GPLv3, you may not sublicense any code, or hold the author liable
-* Under GPLv3, you MUST include a link and/or instructions to obtain the
-original software
-* Under GPLv3, you MUST state significant changes made to the code
-* Under GPLv3, you MUST any code using this code must be open source
-and under the GPLv3 license
-* Under GPLv3, you MUST disclose full text of this license in modified software
-* Under GPLv3, you MUST retain the original copyright
-* Under GPLv3, you MUST include install instructions
-* Etherparty.io may grant exceptions in written form
-----
-
-Etherparty may grant exceptions to this license in limited circumstances.
-Exceptions are only valid if signed with Etherparty's PGP key, which has
-the fingerprint of B2E79C048076360F8066F7C1E4A9CD9DE0D4C482. Such exceptions
-will be listed below, with a link to the full exception text.
-
-* Supermesh <http://0bin.net/paste/xD6W8V3npw9YyHTx#kKwn+PfYn-T/qlrwP6shy3qv92cKOysabM+mnAGSdkr>
-
-Above exceptions only apply to this code
-
-Any code before commit hash 7e79bc3965f05536acd933b6e984f691b1295469
-(inclusive) and/or is in the branch "MIT" is under the MIT license
-
-If there is any doubt over which license code is under, please view
-https://github.com/etherparty/explorer/compare/MIT...master or run
-"git diff mit master"
-
-All code after the commit hash 7e79bc3965f05536acd933b6e984f691b1295469
+All code after the commit hash 8c46ca20abe5ac5b321d3cbd89e05e096dc0f4f3
 is under the GPL v3 license below
 
                     GNU GENERAL PUBLIC LICENSE
