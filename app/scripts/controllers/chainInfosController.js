@@ -57,25 +57,25 @@ angular.module('ethExplorer')
 	                        }
 	                        $scope.range1=100;
 	                        range = $scope.range1;
-	                        var blockPast = web3.eth.getBlock($scope.blockNum - range);
+	                        var blockPast = web3.eth.getBlock(Math.max($scope.blockNum - range,0));
 	                        if(blockBefore!==undefined){
 			                    $scope.blocktimeAverage1 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
 	                        }
 	                        $scope.range2=1000;
 	                        range = $scope.range2;
-	                        var blockPast = web3.eth.getBlock($scope.blockNum - range);
+	                        var blockPast = web3.eth.getBlock(Math.max($scope.blockNum - range,0));
 	                        if(blockBefore!==undefined){
 			                    $scope.blocktimeAverage2 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
 	                        }
 	                        $scope.range3=10000;
 	                        range = $scope.range3;
-	                        var blockPast = web3.eth.getBlock($scope.blockNum - range);
+	                        var blockPast = web3.eth.getBlock(Math.max($scope.blockNum - range,0));
 	                        if(blockBefore!==undefined){
 			                    $scope.blocktimeAverage3 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
 	                        }
 	                        $scope.range4=100000;
 	                        range = $scope.range4;
-	                        var blockPast = web3.eth.getBlock($scope.blockNum - range);
+	                        var blockPast = web3.eth.getBlock(Math.max($scope.blockNum - range,0));
 	                        if(blockBefore!==undefined){
 			                    $scope.blocktimeAverage4 = ((blockNewest.timestamp - blockPast.timestamp)/range).toFixed(2);
 	                        }
