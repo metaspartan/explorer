@@ -1,5 +1,5 @@
 {
-  "name": "EthereumExplorerV2",
+  "name": "ether-explorer",
   "private": false,
   "version": "0.1.0",
   "description": "A lightweight ethereum block explorer",
@@ -20,7 +20,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "http-server ./app -a localhost -p 8000 -c-1",
+    "start": "http-server ./app -a localhost -p 8001 -c-1",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",

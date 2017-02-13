@@ -102,7 +102,7 @@ angular.module('ethExplorer')
                 $scope.totalDifficulty_formatted = $scope.totalDifficulty.toFormat(0);
 
                 // Gas Limit
-                $scope.gasLimit = new BigNumber(blockNewest.gasLimit).toFormat(0) + " m/s";
+                $scope.gasLimit = new BigNumber(blockNewest.gasLimit).toFormat(0);
 
                 // Time
                   var newDate = new Date();
@@ -198,7 +198,7 @@ angular.module('ethExplorer')
             var currentTXnumber = web3.eth.blockNumber;
             $scope.txNumber = currentTXnumber;
             $scope.recenttransactions = [];
-            for (var i=0; i < 10 && currentTXnumber - i >= 0; i++) {
+            for (var i=0; i < 10 && currentTXnumber - i > 0; i++) {
               $scope.recenttransactions.push(web3.eth.getTransactionFromBlock(currentTXnumber - i));
             }
         }
@@ -262,7 +262,7 @@ angular.module('filters', []).
     return function (txt) {
       if (isNaN(txt)) return txt;
       var b = new BigNumber(txt);
-      return b.toFormat(0) + " m/s";
+      return b.toFormat(0);
     };
   }).
   filter('BigNum', function () {
