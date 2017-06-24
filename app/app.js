@@ -97,6 +97,10 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap','filters','ngSanitize'])
         // end AltSheets changes
 
         $rootScope.web3=web3;
+        // MetaMask injects its own web3 instance in all pages, override it
+        // as it might be not compatible with the one used here
+        if (window.web3)
+            window.web3 = web3;
         function sleepFor( sleepDuration ){
             var now = new Date().getTime();
             while(new Date().getTime() < now + sleepDuration){ /* do nothing */ }
