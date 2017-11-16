@@ -53,8 +53,8 @@ angular.module('ethExplorer')
             }
 
             function getETHUSD() {
-              $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/price", function(json) {
-                var price = json.usd;
+              $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
+                var price = Number(json[0].price_usd);
                 var ethusd = price.toFixed(2);
                 var balanceusd = "$" + ethusd * $scope.balance;
                 $scope.balanceusd = balanceusd;

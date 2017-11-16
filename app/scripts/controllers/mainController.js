@@ -177,18 +177,18 @@ angular.module('ethExplorer')
       }
 
         function getETHRates() {
-          $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/price", function(json) {
-            var price = json.usd;
+          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
+            var price = Number(json[0].price_usd);
             $scope.ethprice = "$" + price.toFixed(2);
           });
 
-          $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/price", function(json) {
-            var btcprice = json.btc;
+          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
+            var btcprice = Number(json[0].price_btc);
             $scope.ethbtcprice = btcprice;
           });
 
-          $.getJSON("https://coinmarketcap-nexuist.rhcloud.com/api/eth/market_cap", function(json) {
-            var cap = json.usd;
+          $.getJSON("https://api.coinmarketcap.com/v1/ticker/ethereum/", function(json) {
+            var cap = Number(json[0].market_cap_usd);
             //console.log("Current ETH Market Cap: " + cap);
             $scope.ethmarketcap = cap;
           });
