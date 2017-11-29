@@ -36,30 +36,30 @@ Then visit http://localhost:8000 in your browser of choice after you npm start t
 
 ## Updates since original etherpaty/explorer base:
 
--Regular Expressions completed for Addresses, Block #s, and Transacions IDs (aka Search works great)
+- Regular Expressions completed for Addresses, Block #s, and Transacions IDs (aka Search works great)
 
--The theme is based off Bootstrap V3 for responsive design.
+- The theme is based off Bootstrap V3 for responsive design.
 
--You can easily change from a dark or light theme utilizing https://bootswatch.com
+- You can easily change from a dark or light theme utilizing https://bootswatch.com
 
--There is a basic API implemented now as well as well as a Ethereum Blockchain Information page
+- There is a basic API implemented now as well as well as a Ethereum Blockchain Information page
 
--Realtime ETH/USD Price Ticker
+- Realtime ETH/USD Price Ticker
 
--Realtime Ethereum Hashrate
+- Realtime Ethereum Hashrate
 
--Address Pages are integrated with Shapeshift to easily send a payment to an address.
+- Address Pages are integrated with Shapeshift to easily send a payment to an address.
 
--Responsive design
+- Responsive design
 
--Fontawesome Icons
+- Fontawesome Icons
 
--Block Time Averages
+- Block Time Averages
 
--Gas Prices/Limits
+- Gas Prices/Limits
 
--Total/Current Difficulty
+- Total/Current Difficulty
 
--Realtime latest blocks and recent transactions
+- Realtime latest blocks and recent transactions
 
--Other random blockchain info stats were added
+- Other random blockchain info stats were added
