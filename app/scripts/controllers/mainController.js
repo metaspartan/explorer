@@ -229,14 +229,30 @@ angular.module('filters', []).
             return String(text).substring(0, length-end.length) + end;
         }
       };
-      }).
-  filter('diffFormat', function () {
+      }).filter('diffFormat', function () {
+    //convert hash/solution to different kiloHash,MegaHash/solution and others
     return function (diffi) {
-      if (isNaN(diffi)) return diffi;
-      var n = diffi / 1000000000000;
-      return n.toFixed(3) + " T";
+        if (isNaN(diffi)) return diffi;
+        if (diffi > 1000000000000000) {
+            var n = diffi / 1000000000000000;
+            return n.toFixed(3) + " P";
+        }
+        if (diffi > 1000000000000) {
+            var n = diffi / 1000000000000;
+            return n.toFixed(3) + " T";
+        }
+        if (diffi > 1000000000) {
+            var n = diffi / 1000000000;
+            return n.toFixed(3) + " G";
+        }
+        if (diffi > 1000000) {
+            var n = diffi / 1000000;
+            return n.toFixed(3) + " M";
+        }
+        var n = diffi / 1000;
+        return n.toFixed(3) + " K";
     };
-  }).
+}).
   filter('stylize', function () {
     return function (style) {
       if (isNaN(style)) return style;
@@ -250,14 +266,30 @@ angular.module('filters', []).
       var si = '<i class="fa fa-exchange"></i> ' + text;
       return si;
     };
-  }).
-  filter('hashFormat', function () {
+  }).filter('hashFormat', function () {
+    //convert hash/second to different kiloHash,MegaHash/second and others
     return function (hashr) {
-      if (isNaN(hashr)) return hashr;
-      var n = hashr / 1000000000000;
-      return n.toFixed(3) + " TH/s";
+        if (isNaN(hashr)) return hashr;
+        if (hashr > 1000000000000000) {
+            var n = hashr / 1000000000000000;
+            return n.toFixed(3) + " PH/s";
+        }
+        if (hashr > 1000000000000) {
+            var n = hashr / 1000000000000;
+            return n.toFixed(3) + " TH/s";
+        }
+        if (hashr > 1000000000) {
+            var n = hashr / 1000000000;
+            return n.toFixed(3) + " GH/s";
+        }
+        if (hashr > 1000000) {
+            var n = hashr / 1000000;
+            return n.toFixed(3) + " MH/s";
+        }
+        var n = hashr / 1000;
+        return n.toFixed(3) + " KH/s";
     };
-  }).
+}).
   filter('gasFormat', function () {
     return function (txt) {
       if (isNaN(txt)) return txt;
